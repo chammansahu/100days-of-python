@@ -1,0 +1,18 @@
+hangmanwordgame.com
+
+break complex problem
+
+flowchar programming
+algorthims
+
+app.diagrams.net
+
+start()
+  life,wordLength,blank-----
+  generateRandom()
+  userInput()
+  replaceTheBlank()
+
+
+
+   
