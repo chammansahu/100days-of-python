@@ -1,29 +1,29 @@
-#12create script that converts ranges into list of item multiplied by 10
+# 12create script that converts ranges into list of item multiplied by 10
 
+import string
 from collections import OrderedDict
-r = range(1,10)
+r = range(1, 10)
 ls = [10 * item for item in r]
-#print(ls)
+# print(ls)
 
-#13  convert range into strings
+# 13  convert range into strings
 
-ls_string = map(str,ls)
+ls_string = map(str, ls)
 for item in ls_string:
-    #print(item)
+    # print(item)
 
-#remove duplicates from list 
- a=[1,1,12,2,2,3,4,5,5]
+    # remove duplicates from list
+    a = [1, 1, 12, 2, 2, 3, 4, 5, 5]
 
 a = list(set(a))
-#print(a)
+# print(a)
 
-#If you want to keep the order, you need OrderedDict
+# If you want to keep the order, you need OrderedDict
 a = ["1", 1, "1", 2]
 a = list(OrderedDict.fromkeys(a))
 print(a)
 
-#print ascii 
-import string
+# print ascii
 
 for letter in string.ascii_lowercase:
     print(letter)
