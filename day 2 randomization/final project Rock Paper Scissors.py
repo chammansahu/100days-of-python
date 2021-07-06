@@ -1,5 +1,5 @@
 import random
-rock = '''
+art={"rock" :'''
     _______
 ---'   ____)
       (_____)
@@ -7,8 +7,8 @@ rock = '''
       (____)
 ---.__(___)
 '''
-
-paper = '''
+,
+"paper" : '''
     _______
 ---'   ____)____
           ______)
@@ -17,7 +17,7 @@ paper = '''
 ---.__________)
 '''
 
-scissors = '''
+,"scissors" : '''
     _______
 ---'   ____)____
           ______)
@@ -25,7 +25,16 @@ scissors = '''
       (____)
 ---.__(___)
 '''
-choices = [rock, paper, scissors]
+}
+vs = """
+ _    __    
+| |  / /____
+| | / / ___/
+| |/ (__  ) 
+|___/____(_)
+"""
+
+choices = ["rock", "paper", "scissors"]
 
 
 
@@ -50,8 +59,9 @@ def results(userChoice, generated):
        your_choice = choices[userChoice]
        computer_choice = choices[generated]
    
-       print('you choose\n' + your_choice)
-       print('computer choose\n' + computer_choice)
+       print(art[your_choice])
+       print(vs)
+       print(art[computer_choice])
    
        calculate(userChoice, generated)
    
@@ -59,11 +69,24 @@ def results(userChoice, generated):
        print('Invalid input. You lose')
 
 
-try:
-    userChoice = int(
-        input('What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors: '))
-    computer_generated = random.randint(0, len(choices)-1)
-    results(userChoice, computer_generated)
+def startGame():
+    try:
+        userChoice = int(input('What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors: '))
+        
+        computer_generated = random.randint(0, len(choices)-1)
+        results(userChoice, computer_generated)
 
-except:
-    print('Invalid input. You lose')
+
+    except:
+        print('Invalid input. You lose')
+
+continuePlaying=True
+
+while continuePlaying:
+    startGame()
+    continueGame = input("want to play again : ")
+    if continueGame=="yes":
+        startGame()
+    else:
+        continuePlaying=False
+        print(f"Good Bye!!!")
